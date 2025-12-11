@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Naveenkumar — Data Scientist Portfolio</title>
+  <meta name="description" content="Portfolio of Naveenkumar — Data Scientist, Python, Power BI, Machine Learning"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#06b6d4;
+      --maxw:1100px;
+      font-family:Inter,system-ui;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071029,#081524);
+      color:#e6eef6;
+    }
+    .container{max-width:var(--maxw);margin:auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      height:56px;width:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#3b82f6);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:#042028;
+      animation:pulse 3s infinite;
+    }
+    nav a{color:var(--muted);margin-left:16px;text-decoration:none}
+    nav a:hover{color:var(--accent)}
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:24px;
+      margin-top:32px
+    }
+    .card{
+      background:rgba(255,255,255,0.03);
+      border-radius:14px;
+      padding:20px;
+      animation:fadeUp .8s ease both;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+    }
+    .photo-wrapper{
+      display:flex;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+    .profile-pic{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--accent);
+      box-shadow:0 15px 30px rgba(0,0,0,.4);
+      animation:fadeUp 1s ease;
+    }
+    .cta{
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),#60a5fa);
+      color:#042028;
+      font-weight:700;
+      text-decoration:none;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .cta:hover{
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 8px 18px rgba(0,0,0,.3);
+    }
+    .skill-logos{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:16px;
+    }
+    .skill-logos img{
+      height:40px;
+      opacity:0;
+      animation:fadeUp .5s ease forwards;
+      transition:transform .2s;
+    }
+    .skill-logos img:hover{transform:scale(1.1)}
+    .skill-logos img:nth-child(1){animation-delay:.1s}
+    .skill-logos img:nth-child(2){animation-delay:.2s}
+    .skill-logos img:nth-child(3){animation-delay:.3s}
+    .skill-logos img:nth-child(4){animation-delay:.4s}
+    .skill-logos img:nth-child(5){animation-delay:.5s}
+    .skill-logos img:nth-child(6){animation-delay:.6s}
+    section{margin-top:28px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    footer{text-align:center;margin-top:40px;color:var(--muted)}
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      background-color: var(--card);
+      color: #e6eef6;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .contact-form textarea {resize: vertical;}
+    .submit-btn {
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background:linear-gradient(90deg,#22c55e,#86efac);
+      color:#042028;
+      font-weight:700;
+      text-decoration:none;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .submit-btn:hover {
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 0 10px rgba(34, 197, 94, 0.5);
+    }
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(6,182,212,.6)}
+      70%{box-shadow:0 0 0 14px rgba(6,182,212,0)}
+      100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}
+    }
+    @media(max-width:900px){
+      .hero,.grid-2{grid-template-columns:1fr}
+      nav{display:none}
+    }
+    .card a img {
+  transition: transform 0.2s ease;
+}
+
+.card a:hover img {
+  transform: scale(1.15);
+}
+
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#06b6d4;
+  --maxw:1100px;
+  font-family:Inter,system-ui;
+}
+
+/* ✅ ANIMATED PREMIUM BACKGROUND */
+body{
+  margin:0;
+background: linear-gradient(135deg, #7874f1, #4e4e54);
+
+
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+  color:#e6eef6;
+}
+
+/* ✅ BACKGROUND MOTION */
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.container{max-width:var(--maxw);margin:auto;padding:24px}
+
+header{display:flex;justify-content:space-between;align-items:center}
+
+.brand{display:flex;gap:12px;align-items:center}
+
+.logo{
+  height:56px;width:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#3b82f6);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:#042028;
+  animation:pulse 3s infinite;
+}
+
+/* ✅ HERO GRID */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:24px;
+  margin-top:32px
+}
+
+/* ✅ GLASSMORPHISM + 3D CARD */
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,0.1);
+  animation:floatIn 0.9s ease both;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px) rotateX(3deg) rotateY(-3deg);
+  box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+
+/* ✅ CARD ENTRANCE */
+@keyframes floatIn{
+  from{opacity:0;transform:translateY(30px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* ✅ PROFILE IMAGE FLOAT */
+.photo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:16px;
+}
+
+.profile-pic{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--accent);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+  animation:floatPic 4s ease-in-out infinite;
+}
+
+
+@keyframes floatPic{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* ✅ PREMIUM CTA */
+.cta{
+  padding:12px 16px;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--accent),#60a5fa);
+  color:#042028;
+  font-weight:700;
+  text-decoration:none;
+  transition:all .3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:translateX(-100%);
+  transition:.6s;
+}
+
+.cta:hover::after{transform:translateX(100%)}
+
+/* ✅ SKILL LOGO WAVE */
+.skill-logos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:16px;
+}
+
+.skill-logos img{
+  height:42px;
+  opacity:0;
+  animation:fadeWave .6s ease forwards;
+  transition:transform .25s ease;
+}
+
+.skill-logos img:hover{transform:scale(1.15)}
+
+@keyframes fadeWave{
+  from{opacity:0;transform:translateY(20px) scale(.9)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* STAGGER */
+.skill-logos img:nth-child(1){animation-delay:.1s}
+.skill-logos img:nth-child(2){animation-delay:.2s}
+.skill-logos img:nth-child(3){animation-delay:.3s}
+.skill-logos img:nth-child(4){animation-delay:.4s}
+.skill-logos img:nth-child(5){animation-delay:.5s}
+.skill-logos img:nth-child(6){animation-delay:.6s}
+
+/* ✅ ICON HOVER */
+.card a img{transition:transform .25s ease}
+.card a:hover img{transform:scale(1.2)}
+
+section{margin-top:28px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer{text-align:center;margin-top:40px;color:var(--muted)}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(6,182,212,.6)}
+  70%{box-shadow:0 0 0 14px rgba(6,182,212,0)}
+  100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}
+}
+
+@media(max-width:900px){
+  .hero,.grid-2{grid-template-columns:1fr}
+}
+/* ✅ SCROLL REVEAL BASE */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+b{
+  text-decoration: none;
+  font-size: 15px;
+  text-decoration: none;
+  
+  
+}
+button{
+  color: #06b6d4;
+  background-color: #c9c1c7;
+  text-decoration: none;
+  border-radius: 5px;
+  border-color:  white ;
+}
+/* ✅ MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  /* LOGO + NAME */
+  .logo {
+    height: 46px;
+    width: 46px;
+    font-size: 16px;
+  }
+
+  header .brand strong {
+    font-size: 18px;
+  }
+
+  /* HERO STACK */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* PROFILE IMAGE */
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* CTA BUTTONS STACK */
+  .card > div[style*="display:flex"] {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta,
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  /* SKILL ICONS */
+  .skill-logos {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .skill-logos img {
+    height: 36px;
+  }
+
+  /* PROJECT GRID */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* PROJECT BUTTON */
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button a {
+    display: block;
+    text-decoration: none;
+    color: #06b6d4;
+  }
+
+  /* SOCIAL LINKS */
+  .card a {
+    font-size: 14px;
+  }
+
+  /* CONTACT CENTER FIX */
+  center {
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+  </style>
+  <script>
+    
+  const revealElements = document.querySelectorAll('.card, section');
+
+  const revealOnScroll = () => {
+    revealElements.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementTop < windowHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  };
+
+  // Add base class
+  revealElements.forEach(el => el.classList.add('reveal'));
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
+  
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <div class="logo">NK</div>
+      <div>
+        <strong>Naveenkumar</strong><br>
+       <b><span style="color:var(--muted)">Data Scientist | Business Intelligence</span></b>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="card">
+      <div class="photo-wrapper">
+        <img src="naveen1.jpg" alt="Naveenkumar" class="profile-pic">
+      </div>
+      <h1>Hi, I'm <span style="color:var(--accent)">Naveenkumar</span></h1>
+      <p >
+        Python • Power BI • Machine Learning • MySQL • Excel • Tableau
+      </p>
+      <p>
+        Data Scientist with hands-on experience in EDA, machine learning,
+        dashboarding, and time-series forecasting.
+      </p>
+      <div class="skill-logos">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+        <img src="https://img.icons8.com/color/48/power-bi.png"/>
+        <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/>
+        <img src="https://img.icons8.com/color/48/tableau-software.png"/>
+        <img src="https://img.icons8.com/color/48/artificial-intelligence.png"/>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <a class="cta" href="#projects">View Projects</a>
+        <a class="cta" href="modern cv.pdf"
+           style="background:linear-gradient(90deg,#22c55e,#86efac)" download>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+  <h3>Connect With Me </h3>
+
+  <div style="display:flex;flex-direction:column;gap:14px;margin-top:12px;">
+<H2>linkedin</H2>
+    <a href="https://www.linkedin.com/in/naveen-kumar-g-21861b2a5"
+       target="_blank"
+       style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+           alt="LinkedIn"
+           style="height:30px;">
+      <span style=font-weight:600;color:#06b6d4>LinkedIn Profile</span>
+    </a>
+<H2>GitHub</H2>
+    <a href="https://github.com/gnaveenkumar2006"
+       target="_blank"
+       style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+           alt="GitHub"
+           style="height:30px;">
+      <span style=font-weight:600;color:#06b6d4>GitHub Repositories</span>
+    </a>
+    
+<h2>Gmail</h2>
+    <p style="margin-top:10px;">Mail to: <strong><a style="text-decoration: none;font-weight:600;color:#06b6d4" href="mailto:gnaveenkumar432@gmail.com">gnaveenkumar432@gmail.com</a></strong></p>
+  </div>
+</div>
+
+  </section>
+
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+      Data Scientist skilled in building predictive models and delivering insights that drive real business impact.
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid-2">
+      <div class="card">
+         <h4>📈 Dashboard</h4>
+       <b> <p style="color:var(--muted)">Excel,Power-BI</p></b>
+        <button download ><a id="b" href="DASHBOARD.zip">project</a></button>
+      </div>
+      <div class="card">
+        <h4>🏦 Machine learning with Excel</h4>
+       <b> <p style="color:var(--muted)">Classification,Regression,Timeseries Forecasting</p></b>
+         <button download  > <a id="b"  href="R,T,C.zip">project</a></button>
+      </div>
+      <div class="card">
+         <h4>📊 Python Libraries</h4>
+      <b>  <p style="color:var(--muted)">Numpy,Pandas,Matplotlib,Seaborn,Wordcloud</p></b>
+         <button download><a id="b" href="PYTHON LIBRARIES.zip" >project</a></button>
+      </div>
+      <div class="card">
+        <h4>💻 Python for Machine Learning</h4>
+        <b><p style="color:var(--muted)">Classification,Regression,DecisionTree,Timeseries Forecasting using (Power-BI,Excel)</p></b>
+         <button download><a id="b" href="times.zip">project</a></button>
+      </div>
+    </div>
+  </section>
+
+  
+
+<center>
+    <h3 style="margin-top:20px; color:var(--muted)">Direct Contact Info</h3>
+    <p>Email: <strong>gnaveenkumar432@gmail.com</strong></p>
+    <p>Contact No: <strong>9487029164</strong></p>
+  </section>
+</center>
+  <footer>
+    © 2025 Naveenkumar — Built with ❤
+  </footer>
+</div>
+
+
